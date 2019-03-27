@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import {logWarnings} from "protractor/built/driverProviders";
 
 @Component({
   selector: 'app-recipe-item',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class RecipeItemComponent implements OnInit {
   @Input('recipeItem') recipe: {name: string, description: string, imagePath: string};
-  @Output() recipeAct = new EventEmitter<{name: string, description: string, imagePath: string}>();
+  @Output() recipeChanged = new EventEmitter<{name: string, description: string, imagePath: string}>();
 
   constructor() {
   }
@@ -15,7 +16,7 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  recipeCl(recipe) {
-    this.recipeAct.emit(recipe);
+  recipeSelect() {
+    this.recipeChanged.emit();
   }
 }

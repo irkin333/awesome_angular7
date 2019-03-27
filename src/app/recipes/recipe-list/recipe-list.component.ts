@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Recipe } from '../recipe.model';
 
@@ -8,6 +8,8 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
+  @Output() recipeListChange = new EventEmitter<{name: string, description: string, imagePath: string}>();
+
   recipes: Recipe[] = [
     new Recipe('First recipe', 'This is simply a test', 'https://www.ndtv.com/cooks/images/poha.000.jpg'),
     new Recipe('Second recipe', 'This is simply a test', 'https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/fusilli-salad-with-grilled-chicken-and-zucchini-xl-200308.jpg?itok=FzuPP-Os'),
@@ -19,7 +21,7 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
   }
 
-  recipeAction(recipeData: {name: string, description: string, imagePath: string}) {
-    console.log(recipeData)
+  recipeChangedList(recipe: Recipe) {
+    this.recipeListChange.emit(recipe);
   }
 }

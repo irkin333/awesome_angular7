@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'awesome-app';
+  activeTab: string = 'recipes';
+
+  onNavigate(tabName: string) {
+    this.activeTab = tabName;
+  }
 }

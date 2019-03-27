@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {logWarnings} from "protractor/built/driverProviders";
+
+import { Recipe } from './recipe.model';
 
 @Component({
   selector: 'app-recipes',
@@ -7,6 +8,7 @@ import {logWarnings} from "protractor/built/driverProviders";
   styleUrls: ['./recipes.component.scss']
 })
 export class RecipesComponent implements OnInit {
+  selectedRecipe: Recipe;
 
   constructor() { }
 

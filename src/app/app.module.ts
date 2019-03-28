@@ -11,6 +11,9 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { AwesomeDirectiveComponent } from './awesome-directive/awesome-directive.component';
+import { BasicHighlightDirective } from './awesome-directive/basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './awesome-directive/better-highlight/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    AwesomeDirectiveComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./awesome-directive.component.scss']
 })
 export class AwesomeDirectiveComponent implements OnInit {
+  testCondition: boolean = false;
 
   constructor() { }
 

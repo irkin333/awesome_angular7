@@ -1,2 +1,10 @@
 <p appBasicHighlight>Basic directive styling</p>
-<p appBetterHighlight>Better directive styling</p>
+<p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Better directive styling</p>
+
+<div>
+  <button class="btn btn-primary" (click)="testCondition = !testCondition">Change condition</button>
+
+  <div *appUnless="testCondition">
+    <p>Unless app</p>
+  </div>
+</div>

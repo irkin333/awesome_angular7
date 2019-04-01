@@ -15,6 +15,10 @@ import { AwesomeDirectiveComponent } from './awesome-directive/awesome-directive
 import { BasicHighlightDirective } from './awesome-directive/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './awesome-directive/better-highlight/better-highlight.directive';
 import { UnlessDirective } from './awesome-directive/unless/unless.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { AwesomeServicesComponent } from './awesome-services/awesome-services.component';
+import { AccountComponent } from './awesome-services/account/account.component';
+import { NewAccountComponent } from './awesome-services/new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,13 @@ import { UnlessDirective } from './awesome-directive/unless/unless.directive';
     AwesomeDirectiveComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    DropdownDirective,
+
+    AwesomeServicesComponent,
+    AccountComponent,
+    NewAccountComponent
+    
   ],
   imports: [
     BrowserModule,

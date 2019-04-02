@@ -19,6 +19,9 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { AwesomeServicesComponent } from './awesome-services/awesome-services.component';
 import { AccountComponent } from './awesome-services/account/account.component';
 import { NewAccountComponent } from './awesome-services/new-account/new-account.component';
+import { ServiceAssignComponent } from './assignments/service-assign/service-assign.component';
+import { InactiveUsersComponent } from './assignments/service-assign/inactive-users/inactive-users.component';
+import { ActiveUsersComponent } from './assignments/service-assign/active-users/active-users.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +41,11 @@ import { NewAccountComponent } from './awesome-services/new-account/new-account.
 
     AwesomeServicesComponent,
     AccountComponent,
-    NewAccountComponent
-    
+    NewAccountComponent,
+
+    ServiceAssignComponent,
+    InactiveUsersComponent,
+    ActiveUsersComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)="setTab('recipes')">Recipes</a></li>
+        <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
         <li><a href="#" (click)="setTab('shopping')">Shopping List</a></li>
         <li><a href="#" (click)="setTab('awesome-directive')">Awesome directive</a></li>
         <li><a href="#" (click)="setTab('awesome-services')">Service demo</a></li>
@@ -22,7 +22,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
           <a href="#" class="dropdown-toggle" role="button">Manage <span class="carret"></span></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-m enu">
             <li><a href="#">Save Data</a></li>
             <li><a href="#">Fetch Data</a></li>
           </ul>

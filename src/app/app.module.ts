@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,10 @@ import { InactiveUsersComponent } from './assignments/service-assign/inactive-us
 import { ActiveUsersComponent } from './assignments/service-assign/active-users/active-users.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
+
+const appRoutes: Routes = [
+  { path: 'recipes', component: RecipesComponent  }
+];
 
 @NgModule({
   declarations: [
@@ -51,8 +56,9 @@ import { RecipeService } from './recipes/recipe.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    //AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]

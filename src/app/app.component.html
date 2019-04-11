@@ -7,7 +7,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="activeTab == 'recipes'"></app-recipes>
+      <router-outlet></router-outlet>
+
+
+      <!--<app-recipes *ngIf="activeTab == 'recipes'"></app-recipes>-->
       <app-shopping-list *ngIf="activeTab == 'shopping'"></app-shopping-list>
       <app-awesome-directive *ngIf="activeTab == 'awesome-directive'"></app-awesome-directive>
       <app-service-example *ngIf="activeTab == 'awesome-services'"></app-service-example>

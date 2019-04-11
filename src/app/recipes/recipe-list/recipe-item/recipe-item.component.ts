@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import {logWarnings} from "protractor/built/driverProviders";
+import { Component, OnInit, Input } from '@angular/core';
+import { RecipeService } from '../../recipe.service';
+import { Ingredient } from '../../../shared/ingredient.model';
 
 @Component({
   selector: 'app-recipe-item',
@@ -7,16 +8,15 @@ import {logWarnings} from "protractor/built/driverProviders";
   styleUrls: ['./recipe-item.component.scss']
 })
 export class RecipeItemComponent implements OnInit {
-  @Input('recipeItem') recipe: {name: string, description: string, imagePath: string};
-  @Output() recipeChanged = new EventEmitter<{name: string, description: string, imagePath: string}>();
+  @Input('recipeItem') recipe: {name: string, description: string, imagePath: string, ingredients: Ingredient[]};
 
-  constructor() {
+  constructor(private recipeService: RecipeService) {
   }
 
   ngOnInit() {
   }
 
   recipeSelect() {
-    this.recipeChanged.emit();
+    this.recipeService.recipeSelected.emit(this.recipe);
   }
 }

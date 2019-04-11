@@ -22,6 +22,8 @@ import { NewAccountComponent } from './awesome-services/new-account/new-account.
 import { ServiceAssignComponent } from './assignments/service-assign/service-assign.component';
 import { InactiveUsersComponent } from './assignments/service-assign/inactive-users/inactive-users.component';
 import { ActiveUsersComponent } from './assignments/service-assign/active-users/active-users.component';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { RecipeService } from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,7 @@ import { ActiveUsersComponent } from './assignments/service-assign/active-users/
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

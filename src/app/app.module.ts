@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
@@ -26,9 +25,7 @@ import { ActiveUsersComponent } from './assignments/service-assign/active-users/
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 
-const appRoutes: Routes = [
-  { path: 'recipes', component: RecipesComponent  }
-];
+import { AppRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -56,9 +53,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    //AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(AppRoutes)
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]

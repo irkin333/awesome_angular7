@@ -9,16 +9,25 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/recipes">Recipes</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="setTab('shopping')">Shopping List</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="setTab('awesome-directive')">Awesome directive</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="setTab('awesome-services')">Service demo</a>
-      </li>
+      <!--<li class="nav-item" routerLinkActive="active">-->
+        <!--<a class="nav-link" routerLink="/awesome-directive">Awesome directive</a>-->
+      <!--</li>-->
+      <!--<li class="nav-item" routerLinkActive="active">-->
+        <!--<a class="nav-link" routerLink="/awesome-services">Service demo</a>-->
+      <!--</li>-->
 
+      <li class="nav-item dropdown" appDropdown>
+        <a class="nav-link dropdown-toggle">
+          Awesome practice <span class="carret"></span>
+        </a>
+        <div class="dropdown-menu">
+          <a class="nav-link" routerLink="/awesome-directive">Awesome directive</a>
+          <a class="nav-link" routerLink="/awesome-services">Service demo</a>
+        </div>
+      </li>
       <li class="nav-item dropdown" appDropdown>
         <a class="nav-link dropdown-toggle">
           Manage <span class="carret"></span>

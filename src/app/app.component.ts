@@ -6,10 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'awesome-app';
-  activeTab: string = 'recipes';
-
-  onNavigate(tabName: string) {
-    this.activeTab = tabName;
-  }
 }

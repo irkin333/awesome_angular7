@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
-    <app-header (tabIsChanged)="onNavigate($event)"></app-header>
+    <div class="col-sm-12">
+      <app-header (tabIsChanged)="onNavigate($event)"></app-header>
+    </div>
   </div>
 </div>
 
@@ -9,8 +11,6 @@
     <div class="col-md-12">
       <router-outlet></router-outlet>
 
-
-      <!--<app-recipes *ngIf="activeTab == 'recipes'"></app-recipes>-->
       <app-shopping-list *ngIf="activeTab == 'shopping'"></app-shopping-list>
       <app-awesome-directive *ngIf="activeTab == 'awesome-directive'"></app-awesome-directive>
       <app-service-example *ngIf="activeTab == 'awesome-services'"></app-service-example>

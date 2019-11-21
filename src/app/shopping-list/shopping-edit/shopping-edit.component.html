@@ -14,9 +14,16 @@
           <input type="number" id="amount" class="form-control"
                  #inputAmount>
         </div>
+        <div class="col-sm-2 form-group">
+            <label for="amount">Measurement</label>
+            <select name="measurement" id="measurement" class="form-control" #inputMeasurement>
+              <option value="gr">gramm</option>
+              <option value="piece">piece</option>
+            </select>
+          </div>
       </div>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 shopping-edit-btns">
           <button class="btn btn-success" type="submit" (click)="addIngredient()">ADD</button>
           <button class="btn btn-danger" type="button">DELETE</button>
           <button class="btn btn-primary" type="button">CLEAR</button>

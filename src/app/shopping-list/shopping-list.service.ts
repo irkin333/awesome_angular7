@@ -4,11 +4,7 @@ import { Ingredient } from '../shared/ingredient.model';
 export class ShoppingListService {
   ingredientSelected = new EventEmitter<Ingredient[]>();
 
-  private ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 10),
-    new Ingredient('Oranges', 3)
-  ];
+  private ingredients: Ingredient[] = [];
 
   getIngredients() {
     return this.ingredients.slice();

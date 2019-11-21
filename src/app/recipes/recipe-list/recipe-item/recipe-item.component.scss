@@ -1,0 +1,12 @@
+.recipe {
+    display: flex;
+    cursor: pointer;
+
+    .pull-left {
+        flex-grow: 1;
+    }
+
+    .pull-right {
+        flex-grow: 0;
+    }
+}

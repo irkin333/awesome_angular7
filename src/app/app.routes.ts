@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { RecipesComponent } from './recipes/recipes.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { AwesomeDirectiveComponent } from './awesome-directive/awesome-directive.component';
-import { AwesomeServicesComponent } from './awesome-services/awesome-services.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
+import { AwesomeDirectiveComponent } from './assignments/awesome-directive/awesome-directive.component';
+import { AwesomeServicesComponent } from './assignments/awesome-services/awesome-services.component';
 
 export const AppRoutes: Routes = [
   { path: 'recipes', component: RecipesComponent  },

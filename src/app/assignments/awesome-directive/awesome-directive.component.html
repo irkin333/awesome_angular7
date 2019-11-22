@@ -1,10 +1,16 @@
-<p appBasicHighlight>Basic directive styling</p>
-<p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Better directive styling</p>
-
+<p class="basic" appBasicHighlight>Basic directive styling</p>
+<hr>
+<p class="better"
+   appBetterHighlight
+   [defaultColor]="'rgb(253, 171, 33)'"
+   [highlightColor]="'#ff635f'">
+  Better directive styling
+</p>
+<hr>
 <div>
-  <button class="btn btn-primary" (click)="testCondition = !testCondition">Change condition</button>
+  <button class="btn btn-primary" (click)="unlessCondition = !unlessCondition">Change condition</button>
 
-  <div *appUnless="testCondition">
-    <p>Unless app</p>
+  <div *appUnless="unlessCondition">
+    <p class="basic">Unless Directive - this HTML element will be toggled (removed from DOM) on condition change.</p>
   </div>
 </div>

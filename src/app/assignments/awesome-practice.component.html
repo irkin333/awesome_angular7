@@ -1,0 +1,19 @@
+<h1>{{ title }}</h1>
+<div class="local-navigation">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link"
+               routerLinkActive="active"
+               routerLink="directives">Directives</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"
+                routerLinkActive="active"
+                routerLink="services">Services</a>
+        </li>
+    </ul>
+</div>
+
+<div style="margin-top: 15px;">
+    <router-outlet></router-outlet>
+</div>

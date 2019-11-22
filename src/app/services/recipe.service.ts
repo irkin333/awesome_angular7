@@ -27,6 +27,14 @@ export class RecipeService {
         new Ingredient('Mustard', 100, 'gr'),
         new Ingredient('Ketchup', 100, 'gr'),
         new Ingredient('Mayonnaise', 100, 'gr'),
+      ]),
+      new Recipe('French Fries',
+      'The best taste of potato you can ever experience!',
+      '../../assets/images/french-fries.png',
+      [
+        new Ingredient('Potato', 500, 'gr'),
+        new Ingredient('Oil', 1000, 'ml'),
+        new Ingredient('Salt', 10, 'gr'),
       ])
   ];
 
@@ -34,6 +42,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToList(ingredients: Ingredient[]) {

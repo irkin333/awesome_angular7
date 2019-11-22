@@ -3,35 +3,23 @@
   <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
     <!--<span class="navbar-toggler-icon"></span>-->
   <!--</button>-->
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/recipes">Recipes</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/recipes">Recipes</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/awesome-practice">Awesome practice</a>
       </li>
 
-      <li class="nav-item dropdown" appDropdown>
-        <a class="nav-link dropdown-toggle">
-          Awesome practice <span class="carret"></span>
-        </a>
+      <!-- <li class="nav-item dropdown pull-right" appDropdown>
+        <a class="nav-link dropdown-toggle" routerLink="/awesome-practice">Awesome practice</a>
         <div class="dropdown-menu">
-          <a class="nav-link" routerLink="/awesome-directive">Awesome directive</a>
-          <a class="nav-link" routerLink="/awesome-services">Service demo</a>
+          <a class="dropdown-item" routerLink="/awesome-directive">Awesome directive</a>
+          <a class="dropdown-item" routerLink="/awesome-services">Awesome services</a>
         </div>
-      </li>
-
-      <li class="nav-item dropdown" appDropdown>
-        <a class="nav-link dropdown-toggle">
-          Manage <span class="carret"></span>
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item">Fetch Data</a>
-          <a class="dropdown-item">Save Data</a>
-        </div>
-      </li>
+      </li> -->
     </ul>
-  </div>
 </nav>

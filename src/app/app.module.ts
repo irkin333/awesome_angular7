@@ -32,7 +32,10 @@ import { AwesomeServicesComponent } from './assignments/awesome-services/awesome
 import { AccountComponent } from './assignments/awesome-services/account/account.component';
 import { NewAccountComponent } from './assignments/awesome-services/new-account/new-account.component';
 
-import { AppRoutingModule } from './app-routes.module';
+import { AwesomeTDFormsComponent } from './assignments/awesome-td-forms/awesome-td-forms.component';
+import { AwesomeReactiveFormsComponent } from './assignments/awesome-reactive-forms/awesome-reactive-forms.component';
+
+import { AppRoutingModule } from './routing/app-routes.module';
 import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
@@ -62,6 +65,10 @@ import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edi
     AwesomeServicesComponent,
     AccountComponent,
     NewAccountComponent,
+
+    AwesomeTDFormsComponent,
+    AwesomeReactiveFormsComponent,
+    
     RecipeEditComponent
   ],
   imports: [

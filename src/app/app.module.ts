@@ -37,6 +37,8 @@ import { AwesomeReactiveFormsComponent } from './assignments/awesome-reactive-fo
 
 import { AppRoutingModule } from './routing/app-routes.module';
 import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
+import { LectureFormsComponent } from './assignments/awesome-reactive-forms/lecture-forms/lecture-forms.component';
+import { PracticeFormsComponent } from './assignments/awesome-reactive-forms/practice-forms/practice-forms.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,11 @@ import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edi
     AwesomeTDFormsComponent,
     AwesomeReactiveFormsComponent,
     
-    RecipeEditComponent
+    RecipeEditComponent,
+    
+    LectureFormsComponent,
+    
+    PracticeFormsComponent
   ],
   imports: [
     BrowserModule,

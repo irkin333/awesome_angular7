@@ -1,22 +1,34 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Name</label>
           <input type="text"
                  id="name"
                  class="form-control"
-                 #inputName>
+                 name="name"
+                 ngModel
+                 required>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
-          <input type="number" id="amount" class="form-control"
-                 #inputAmount>
+          <input type="number"
+                 id="amount"
+                 class="form-control"
+                 name="amount"
+                 ngModel
+                 required
+                 pattern="^[1-9]+[0-9]*$">
         </div>
         <div class="col-sm-2 form-group">
             <label for="amount">Measurement</label>
-            <select name="measurement" id="measurement" class="form-control" #inputMeasurement>
+            <select name="measurement"
+                    id="measurement"
+                    class="form-control"
+                    ngModel
+                    required>
+                    
               <option value="gr">gramm</option>
               <option value="piece">piece</option>
               <option value="ml">milliliters</option>
@@ -25,9 +37,9 @@
       </div>
       <div class="row">
         <div class="col-xs-12 shopping-edit-btns">
-          <button class="btn btn-success" type="submit" (click)="addIngredient()">ADD</button>
-          <button class="btn btn-danger" type="button">DELETE</button>
-          <button class="btn btn-primary" type="button">CLEAR</button>
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{ editMode ? 'UPDATE' : 'ADD' }}</button>
+          <button class="btn btn-danger" type="button" (click)="onDelete()" *ngIf="editMode">DELETE</button>
+          <button class="btn btn-primary" type="button" (click)="onClear()">CLEAR</button>
         </div>
       </div>
     </form>

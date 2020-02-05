@@ -6,6 +6,11 @@ import { ShoppingListService } from './shopping-list.service';
 
 @Injectable()
 export class RecipeService {
+  private measurements: {name:string, value:string}[] = [
+    { value: 'gr', name:'gramm' },
+    { value: 'piece', name:'piece' },
+    { value: 'ml', name:'milliliters' }
+  ];
 
   private recipes: Recipe[] = [
     new Recipe('NY pizza',
@@ -45,6 +50,10 @@ export class RecipeService {
 
   getRecipe(index: number) {
     return this.recipes[index];
+  }
+
+  getMeasurements() {
+    return this.measurements.slice();
   }
 
   addIngredientsToList(ingredients: Ingredient[]) {

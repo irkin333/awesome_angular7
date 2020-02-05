@@ -28,10 +28,7 @@
                     class="form-control"
                     ngModel
                     required>
-                    
-              <option value="gr">gramm</option>
-              <option value="piece">piece</option>
-              <option value="ml">milliliters</option>
+              <option *ngFor="let measure of ingredientMasurements" [ngValue]="measure.value">{{ measure.name }}</option>
             </select>
           </div>
       </div>

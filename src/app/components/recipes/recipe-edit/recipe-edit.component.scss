@@ -5,3 +5,9 @@ button {
 .recipe-ngredient {
     margin-bottom: 10px;
 }
+
+input, select, textarea {
+    &.ng-invalid {
+        border: 1px solid red;
+    }
+}

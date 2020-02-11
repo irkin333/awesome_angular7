@@ -14,6 +14,10 @@ import { AwesomeReactiveFormsComponent } from '../assignments/awesome-reactive-f
 import { LectureFormsComponent } from '../assignments/awesome-reactive-forms/lecture-forms/lecture-forms.component';
 import { PracticeFormsComponent } from '../assignments/awesome-reactive-forms/practice-forms/practice-forms.component';
 
+import { AwesomePipesComponent } from '../assignments/awesome-pipes/awesome-pipes.component';
+import { ShortenPipe } from '../assignments/awesome-pipes/shorten.pipe';
+import { FilterPipe } from '../assignments/awesome-pipes/filter.pipe';
+
 export const PracticeDeclarations = [
     AwesomePracticeComponent,
     AwesomeDirectiveComponent,
@@ -29,5 +33,9 @@ export const PracticeDeclarations = [
     AwesomeReactiveFormsComponent,
     
     LectureFormsComponent,
-    PracticeFormsComponent
+    PracticeFormsComponent,
+
+    AwesomePipesComponent,
+    ShortenPipe,
+    FilterPipe
 ];

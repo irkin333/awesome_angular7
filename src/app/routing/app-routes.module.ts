@@ -12,6 +12,7 @@ import { AwesomeServicesComponent } from '../assignments/awesome-services/awesom
 import { AwesomeTDFormsComponent } from '../assignments/awesome-td-forms/awesome-td-forms.component';
 import { AwesomeReactiveFormsComponent } from '../assignments/awesome-reactive-forms/awesome-reactive-forms.component';
 import { AwesomePipesComponent } from '../assignments/awesome-pipes/awesome-pipes.component';
+import { AwesomeHttpsComponent } from '../assignments/awesome-https/awesome-https.component';
 
 import { RecipeDetailComponent } from '../components/recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from '../components/recipes/recipe-edit/recipe-edit.component';
@@ -31,6 +32,7 @@ const AppRoutes: Routes = [
     { path: 'template-driven-forms', component: AwesomeTDFormsComponent  },
     { path: 'reactive-forms', component: AwesomeReactiveFormsComponent  },
     { path: 'pipes', component: AwesomePipesComponent  },
+    { path: 'http-example', component: AwesomeHttpsComponent  },
   ]  },
   { path: 'not-found', component: ErrorPageComponent  },
   { path: '**', redirectTo: '/not-found'  }

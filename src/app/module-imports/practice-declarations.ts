@@ -18,6 +18,8 @@ import { AwesomePipesComponent } from '../assignments/awesome-pipes/awesome-pipe
 import { ShortenPipe } from '../assignments/awesome-pipes/shorten.pipe';
 import { FilterPipe } from '../assignments/awesome-pipes/filter.pipe';
 
+import { AwesomeHttpsComponent } from '../assignments/awesome-https/awesome-https.component';
+
 export const PracticeDeclarations = [
     AwesomePracticeComponent,
     AwesomeDirectiveComponent,
@@ -37,5 +39,7 @@ export const PracticeDeclarations = [
 
     AwesomePipesComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+
+    AwesomeHttpsComponent
 ];

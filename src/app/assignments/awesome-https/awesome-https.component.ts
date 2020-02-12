@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Post } from './post.interface';
+import { PostService } from './posts.service';
 
 @Component({
   selector: 'app-awesome-https',
@@ -8,38 +9,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AwesomeHttpsComponent implements OnInit {
   loadedPosts = [];
+  isLoading = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private postsService: PostService) {}
 
   ngOnInit() {
-    this.fetchPosts();
+    this.onFetchPosts();
   }
 
-  onCreatePost(postData: { title: string; content: string }) {
-    // Send Http request
-    this.http
-      .post(
-        'https://awesome-angular-app.firebaseio.com//posts.json',
-        postData
-      )
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+  onCreatePost(postData:  Post) {
+    this.postsService.createAndStorePost(postData)
+        .subscribe(responseData => {
+          console.log(responseData);
+        });;
   }
 
   onFetchPosts() {
-    // Send Http request
+    this.isLoading = true;
+    this.postsService.fetchPosts()
+      .subscribe((posts) => {
+        this.isLoading = false;
+        this.loadedPosts = posts;
+      });
   }
 
   onClearPosts() {
     // Send Http request
-  }
-
-  private fetchPosts() {
-    this.http
-      .get('https://awesome-angular-app.firebaseio.com//posts.json')
-      .subscribe((data) => {
-        console.log(data)
-      })
   }
 }

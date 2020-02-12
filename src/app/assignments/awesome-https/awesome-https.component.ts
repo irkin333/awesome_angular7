@@ -11,13 +11,15 @@ export class AwesomeHttpsComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.fetchPosts();
+  }
 
   onCreatePost(postData: { title: string; content: string }) {
     // Send Http request
     this.http
       .post(
-        'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',
+        'https://awesome-angular-app.firebaseio.com//posts.json',
         postData
       )
       .subscribe(responseData => {
@@ -31,5 +33,13 @@ export class AwesomeHttpsComponent implements OnInit {
 
   onClearPosts() {
     // Send Http request
+  }
+
+  private fetchPosts() {
+    this.http
+      .get('https://awesome-angular-app.firebaseio.com//posts.json')
+      .subscribe((data) => {
+        console.log(data)
+      })
   }
 }

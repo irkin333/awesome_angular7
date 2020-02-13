@@ -10,6 +10,7 @@ import { PostService } from './posts.service';
 export class AwesomeHttpsComponent implements OnInit {
   loadedPosts = [];
   isLoading = false;
+  error = null;
 
   constructor(private postsService: PostService) {}
 
@@ -30,10 +31,17 @@ export class AwesomeHttpsComponent implements OnInit {
       .subscribe((posts) => {
         this.isLoading = false;
         this.loadedPosts = posts;
+      }, error => {
+        this.error = error.message;
       });
   }
 
   onClearPosts() {
-    // Send Http request
+    this.isLoading = true;
+    this.postsService.deletePosts()
+      .subscribe(() => {
+        this.isLoading = false;
+        this.loadedPosts = [];
+      });
   }
 }

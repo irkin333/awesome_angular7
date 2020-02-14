@@ -16,14 +16,15 @@ import { AwesomeHttpsComponent } from '../assignments/awesome-https/awesome-http
 
 import { RecipeDetailComponent } from '../components/recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from '../components/recipes/recipe-edit/recipe-edit.component';
+import { RecipesResolverService } from '../services/recipes-resolver.service';
 
 const AppRoutes: Routes = [
   { path: '', component: HomeComponent  },
   { path: 'recipes', component: RecipesComponent, children: [
     { path: '', component: RecipeStartComponent },
     { path: 'new', component: RecipeEditComponent },
-    { path: ':id', component: RecipeDetailComponent },
-    { path: ':id/edit', component: RecipeEditComponent }
+    { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService] },
+    { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService] }
   ] },
   { path: 'shopping-list', component: ShoppingListComponent  },
   { path: 'awesome-practice', component: AwesomePracticeComponent, children: [

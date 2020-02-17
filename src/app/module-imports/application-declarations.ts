@@ -12,6 +12,7 @@ import { RecipeEditComponent } from '../components/recipes/recipe-edit/recipe-ed
 
 import { ShoppingListComponent } from '../components/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from '../components/shopping-list/shopping-edit/shopping-edit.component';
+import { AuthComponent } from '../auth/auth.component';
 
 export const AppDeclarations = [
     HomeComponent,
@@ -28,4 +29,6 @@ export const AppDeclarations = [
 
     ShoppingListComponent,
     ShoppingEditComponent,
+
+    AuthComponent 
 ];

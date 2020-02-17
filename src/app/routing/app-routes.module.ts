@@ -17,6 +17,7 @@ import { AwesomeHttpsComponent } from '../assignments/awesome-https/awesome-http
 import { RecipeDetailComponent } from '../components/recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from '../components/recipes/recipe-edit/recipe-edit.component';
 import { RecipesResolverService } from '../services/recipes-resolver.service';
+import { AuthComponent } from '../auth/auth.component';
 
 const AppRoutes: Routes = [
   { path: '', component: HomeComponent  },
@@ -35,6 +36,7 @@ const AppRoutes: Routes = [
     { path: 'pipes', component: AwesomePipesComponent  },
     { path: 'http-example', component: AwesomeHttpsComponent  },
   ]  },
+  { path: 'auth', component: AuthComponent},
   { path: 'not-found', component: ErrorPageComponent  },
   { path: '**', redirectTo: '/not-found'  }
 ];

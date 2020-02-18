@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService, AuthResponseData } from './auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -25,21 +25,25 @@ export class AuthComponent implements OnInit {
         const email = authForm.value.email;
         const password = authForm.value.password;
 
+        let authObs: Observable<AuthResponseData>;
+
         this.loading = true;
         if(this.isLoggedIn) {
-            //...
+            authObs = this.authService.login(email, password);
         } else {
-            this.authService.signUp(email, password).subscribe(
-                (response) => {
-                    console.log(response);
-                    this.loading = false;
-                    authForm.reset();
-                }, (errorMessage) => {
-                    console.log(errorMessage)
-                    this.error = errorMessage;
-                    this.loading = false;
-                });
+            authObs = this.authService.signup(email, password);
         }
+
+        authObs.subscribe(
+            (response) => {
+                console.log(response);
+                this.loading = false;
+                authForm.reset();
+            }, (errorMessage) => {
+                console.log(errorMessage)
+                this.error = errorMessage;
+                this.loading = false;
+            });
     }
   
     ngOnInit() {

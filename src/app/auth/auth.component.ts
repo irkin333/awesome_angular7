@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService, AuthResponseData } from './auth.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -12,7 +13,9 @@ export class AuthComponent implements OnInit {
     loading = false;
     error: string = null;
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService, private router: Router) {
+
+    }
 
     onSwithLoginSignUpMode () {
         this.isLoggedIn = !this.isLoggedIn;
@@ -39,6 +42,7 @@ export class AuthComponent implements OnInit {
                 console.log(response);
                 this.loading = false;
                 authForm.reset();
+                this.router.navigate(['/recipes'])
             }, (errorMessage) => {
                 console.log(errorMessage)
                 this.error = errorMessage;

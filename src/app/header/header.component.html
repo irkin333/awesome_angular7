@@ -5,7 +5,10 @@
   <!--</button>-->
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/recipes">Recipes</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/auth" *ngIf="!isAuthenticated">Authorize</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/recipes" *ngIf="isAuthenticated">Recipes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping List</a>
@@ -20,14 +23,13 @@
       <button class="btn btn-info dropdown-toggle"
               type="button"
               id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false">
+              *ngIf="isAuthenticated">
         Manage recipes
       </button>
-      <div appDropdown class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div appDropdown class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="isAuthenticated">
         <a class="dropdown-item" (click)="onFetchRecipes()">Fetch recipes</a>
         <a class="dropdown-item" (click)="onSaveRecipes()">Store recipes</a>
       </div>
+      <button style="margin-left: 10px;" class="btn btn-danger" *ngIf="isAuthenticated">Logout</button>
     </div>
 </nav>

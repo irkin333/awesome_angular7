@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-auth',
@@ -33,8 +34,9 @@ export class AuthComponent implements OnInit {
                     console.log(response);
                     this.loading = false;
                     authForm.reset();
-                }, (error) => {
-                    console.log(error)
+                }, (errorMessage) => {
+                    console.log(errorMessage)
+                    this.error = errorMessage;
                     this.loading = false;
                 });
         }

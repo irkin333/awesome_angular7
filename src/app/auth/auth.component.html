@@ -17,10 +17,16 @@
             <div class="actions">
                 <button class="btn btn-primary"
                         [disabled]="!authForm.valid">{{ isLoggedIn ? 'Login' : 'Sign Up'}}</button>   
-                <button class="btn btn-primary" (click)="onSwithLoginSignUpMode()">
+                <button type="button" class="btn btn-primary" (click)="onSwithLoginSignUpMode()">
                     Switch to {{ isLoggedIn ? 'Sign Up' : 'Login' }}
                 </button>
             </div>
         </form>
+        <hr>
+        <div *ngIf="error">
+            <div class="alert alert-danger">
+                <p>{{ error }}</p>
+            </div>
+        </div>
     </div>
 </div>

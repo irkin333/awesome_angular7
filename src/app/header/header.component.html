@@ -30,6 +30,9 @@
         <a class="dropdown-item" (click)="onFetchRecipes()">Fetch recipes</a>
         <a class="dropdown-item" (click)="onSaveRecipes()">Store recipes</a>
       </div>
-      <button style="margin-left: 10px;" class="btn btn-danger" *ngIf="isAuthenticated">Logout</button>
+      <button style="margin-left: 10px;"
+              class="btn btn-danger"
+              *ngIf="isAuthenticated"
+              (click)="onLogout()">Logout</button>
     </div>
 </nav>

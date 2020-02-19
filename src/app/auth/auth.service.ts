@@ -4,6 +4,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 import { User } from './user.model';
 import { Router } from '@angular/router';
+import { userInfo } from 'os';
 
 export interface AuthResponseData {
     kind: string;
@@ -69,6 +70,8 @@ export class AuthService {
 
         if(loadedUser.token) {
             this.user.next(loadedUser);
+            const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
+            this.autoLogout(expirationDuration);
         }
     }
 
@@ -82,16 +85,17 @@ export class AuthService {
         this.tokenExpTimer = null;
     }
 
-    // autoLogout(expirationDuration: number) {
-    //     this.tokenExpTimer = setTimeout(() => {
-    //         this.logout();
-    //     }), expirationDuration;
-    // }
+    autoLogout(expirationDuration: number) {
+        this.tokenExpTimer = setTimeout(() => {
+            this.logout();
+        }, expirationDuration);
+    }
 
     private handleAuth(responseData: AuthResponseData) {
         const ExpirationDate = new Date(new Date().getTime() + +responseData.expiresIn * 1000);
         const user = new User(responseData.email, responseData.localId, responseData.idToken, ExpirationDate);
         this.user.next(user);
+        this.autoLogout(+responseData.expiresIn * 1000);
         localStorage.setItem('userData', JSON.stringify(user));
     }
 

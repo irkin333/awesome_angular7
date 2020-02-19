@@ -1,6 +1,6 @@
 import { HttpInterceptor, HttpRequest, HttpHandler } from '@angular/common/http';
 
-export class AuthInterceptorService implements HttpInterceptor {
+export class AuthHTTPInterceptorService implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler) {
         //it is possible to make modifications of request here
         const modifiedRequest = request.clone({

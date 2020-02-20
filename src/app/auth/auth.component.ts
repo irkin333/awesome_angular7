@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
 import { AuthService, AuthResponseData } from './auth.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { AlertComponent } from '../shared/alert/alert.component';
 
 @Component({
   selector: 'app-auth',
@@ -11,11 +12,12 @@ import { Router } from '@angular/router';
 export class AuthComponent implements OnInit {
     isLoggedIn = true;
     loading = false;
-    error: string = null;
 
-    constructor(private authService: AuthService, private router: Router) {
-
-    }
+    constructor(
+        private authService: AuthService,
+        private router: Router,
+        private componentFactoryResolver: ComponentFactoryResolver
+        ) { }
 
     onSwithLoginSignUpMode () {
         this.isLoggedIn = !this.isLoggedIn;
@@ -43,12 +45,17 @@ export class AuthComponent implements OnInit {
                 authForm.reset();
                 this.router.navigate(['/recipes'])
             }, (errorMessage) => {
-                this.error = errorMessage;
+                this.showErrorAlert(errorMessage);
                 this.loading = false;
             });
     }
   
     ngOnInit() {
+        
+    }
+
+    private showErrorAlert(message: string) {
+        const alertComponentFactory = this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
         
     }
 }

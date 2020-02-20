@@ -23,10 +23,6 @@
             </div>
         </form>
         <hr>
-        <div *ngIf="error">
-            <div class="alert alert-danger">
-                <p>{{ error }}</p>
-            </div>
-        </div>
+        <!-- <app-alert [message]="error" *ngIf="error" (close)="onhandleError()"></app-alert> -->
     </div>
 </div>

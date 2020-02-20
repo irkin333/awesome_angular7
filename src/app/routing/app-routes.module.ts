@@ -21,27 +21,35 @@ import { AuthComponent } from '../auth/auth.component';
 import { AuthGuard } from '../auth/auth-guards';
 
 const AppRoutes: Routes = [
-  { path: '', component: HomeComponent  },
-  { path: 'recipes', component: RecipesComponent, 
-  canActivate: [AuthGuard],
-  children: [
-    { path: '', component: RecipeStartComponent },
-    { path: 'new', component: RecipeEditComponent },
-    { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService] },
-    { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService] }
-  ] },
-  { path: 'shopping-list', component: ShoppingListComponent  },
-  { path: 'awesome-practice', component: AwesomePracticeComponent, children: [
-    { path: 'directives', component: AwesomeDirectiveComponent  },
-    { path: 'services', component: AwesomeServicesComponent  },
-    { path: 'template-driven-forms', component: AwesomeTDFormsComponent  },
-    { path: 'reactive-forms', component: AwesomeReactiveFormsComponent  },
-    { path: 'pipes', component: AwesomePipesComponent  },
-    { path: 'http-example', component: AwesomeHttpsComponent  },
-  ]  },
-  { path: 'auth', component: AuthComponent},
-  { path: 'not-found', component: ErrorPageComponent  },
-  { path: '**', redirectTo: '/not-found'  }
+  {
+    path: '', component: HomeComponent
+  }, {
+    path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard],
+    children: [
+      { path: '', component: RecipeStartComponent },
+      { path: 'new', component: RecipeEditComponent },
+      { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService] },
+      { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService] }
+    ]
+  }, {
+    path: 'shopping-list', component: ShoppingListComponent
+  }, {
+    path: 'awesome-practice', component: AwesomePracticeComponent,
+    children: [
+      { path: 'directives', component: AwesomeDirectiveComponent },
+      { path: 'services', component: AwesomeServicesComponent },
+      { path: 'template-driven-forms', component: AwesomeTDFormsComponent },
+      { path: 'reactive-forms', component: AwesomeReactiveFormsComponent },
+      { path: 'pipes', component: AwesomePipesComponent },
+      { path: 'http-example', component: AwesomeHttpsComponent },
+    ]
+  }, {
+    path: 'auth', component: AuthComponent
+  }, {
+    path: 'not-found', component: ErrorPageComponent
+  }, {
+    path: '**', redirectTo: '/not-found'
+  }
 ];
 
 @NgModule({

@@ -14,6 +14,7 @@ import { ShoppingListComponent } from '../components/shopping-list/shopping-list
 import { ShoppingEditComponent } from '../components/shopping-list/shopping-edit/shopping-edit.component';
 import { AuthComponent } from '../auth/auth.component';
 import { LoaderComponent } from '../shared/loader/loader.component';
+import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
 
 export const AppDeclarations = [
     HomeComponent,
@@ -32,5 +33,6 @@ export const AppDeclarations = [
     ShoppingEditComponent,
 
     AuthComponent,
-    LoaderComponent
+    LoaderComponent,
+    PlaceholderDirective
 ];

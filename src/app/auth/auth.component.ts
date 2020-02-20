@@ -1,17 +1,21 @@
-import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewChild, OnDestroy } from '@angular/core';
 import { AuthService, AuthResponseData } from './auth.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { AlertComponent } from '../shared/alert/alert.component';
+import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit, OnDestroy {
+    @ViewChild(PlaceholderDirective) alertHost: PlaceholderDirective;
     isLoggedIn = true;
     loading = false;
+
+    private alertSubscription: Subscription;
 
     constructor(
         private authService: AuthService,
@@ -50,12 +54,24 @@ export class AuthComponent implements OnInit {
             });
     }
   
-    ngOnInit() {
-        
+    ngOnInit() { }
+
+    ngOnDestroy() {
+        if(this.alertSubscription) {
+            this.alertSubscription.unsubscribe();
+        }
     }
 
     private showErrorAlert(message: string) {
         const alertComponentFactory = this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
-        
+        const hostViewContainer = this.alertHost.viewContainerRef;
+        hostViewContainer.clear();
+
+        const alertComponentRef = hostViewContainer.createComponent(alertComponentFactory);
+        alertComponentRef.instance.message = message;
+        this.alertSubscription = alertComponentRef.instance.close.subscribe(() => {
+            this.alertSubscription.unsubscribe();
+            hostViewContainer.clear();
+        });
     }
 }

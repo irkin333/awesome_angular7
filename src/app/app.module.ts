@@ -22,6 +22,9 @@ import { AlertComponent } from './shared/alert/alert.component';
     AppRoutingModule
   ],
   providers: [Providers],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AlertComponent
+  ]
 })
 export class AppModule { }

@@ -4,8 +4,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHTTPInterceptorService } from '../assignments/awesome-https/auth-http-interceptor.service';
 import { LogInterceptorService } from '../assignments/awesome-https/log-interceptor.service';
 import { AuthInterceptorService } from '../auth/auth-interceptor.service';
+import { NgModule } from '@angular/core';
 
-export const Providers = [
+const Providers = [
     RecipeService,
     ShoppingListService,
     // { 
@@ -24,3 +25,8 @@ export const Providers = [
         multi: true
     }
 ];
+
+@NgModule({
+    providers: [Providers]
+})
+export class ProvidersModule { }

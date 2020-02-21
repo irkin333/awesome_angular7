@@ -2,41 +2,42 @@
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AppDeclarations } from './module-imports/application-declarations';
 import { PracticeDeclarations } from './module-imports/practice-declarations';
-import { Providers } from './module-imports/providers';
-
-import { AlertComponent } from './shared/alert/alert.component';
+import { ProvidersModule } from './module-imports/providers';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './routing/app-routes.module';
 
 import { RecipesModule } from './components/recipes/recipes.module';
 import { ShoppingListModule } from './components/shopping-list/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
+
+import { AuthComponent } from './auth/auth.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ...AppDeclarations,
+
+    HomeComponent,
+    HeaderComponent,
+    ErrorPageComponent,
+    AuthComponent,
+
     ...PracticeDeclarations,
-    AlertComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-
     AppRoutingModule,
     RecipesModule,
-    ShoppingListModule
+    ShoppingListModule,
+    SharedModule,
+    ProvidersModule,
+    HttpClientModule
   ],
-  providers: [Providers],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    AlertComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

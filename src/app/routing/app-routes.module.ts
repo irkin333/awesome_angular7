@@ -17,6 +17,8 @@ const AppRoutes: Routes = [
   {
     path: '', component: HomeComponent
   }, {
+    path: 'recipes', loadChildren: () => import('../components/recipes/recipes.module').then(m => m.RecipesModule)
+  }, {
     path: 'awesome-practice', component: AwesomePracticeComponent,
     children: [
       { path: 'directives', component: AwesomeDirectiveComponent },

@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     SharedModule,
     RouterModule.forChild([{
-        path: 'shopping-list', component: ShoppingListComponent
+        path: '', component: ShoppingListComponent
       }])
   ],
   exports: [

@@ -32,7 +32,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShoppingListModule,
     SharedModule,
     ProvidersModule,
     HttpClientModule

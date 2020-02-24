@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { ErrorPageComponent } from '../components/error-page/error-page.component';
 
@@ -18,6 +18,8 @@ const AppRoutes: Routes = [
     path: '', component: HomeComponent
   }, {
     path: 'recipes', loadChildren: () => import('../components/recipes/recipes.module').then(m => m.RecipesModule)
+  }, {
+    path: 'shopping-list', loadChildren: () => import('../components/shopping-list/shopping-list.module').then(m => m.ShoppingListModule)
   }, {
     path: 'awesome-practice', component: AwesomePracticeComponent,
     children: [
@@ -40,7 +42,10 @@ const AppRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(AppRoutes)],
+  imports: [RouterModule.forRoot(AppRoutes, {
+    /** we will use lazy loading t osplit code into bundles, but they will be preloaded */
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

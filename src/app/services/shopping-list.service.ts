@@ -5,7 +5,6 @@ import { Ingredient } from '../models/ingredient.model';
 
 
 export class ShoppingListService {
-  // ingredientSelected = new EventEmitter<Ingredient[]>();
   ingredientSelected = new Subject<Ingredient[]>();
   isEdited = new Subject<number>();
 

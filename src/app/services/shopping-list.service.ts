@@ -14,13 +14,13 @@ export class ShoppingListService {
     new Ingredient('Sauce', 300, 'ml')
   ];
 
-  getIngredients() {
-    return this.ingredients.slice();
-  }
+  // getIngredients() {
+  //   return this.ingredients.slice();
+  // }
 
-  getIngredient(index: number) {
-    return this.ingredients[index];
-  }
+  // getIngredient(index: number) {
+  //   return this.ingredients[index];
+  // }
 
   // addIngredient(ingredient: Ingredient) {
   //   this.ingredients.push(ingredient);

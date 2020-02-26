@@ -49,8 +49,8 @@ export function shoppingListReducer(
       return {
         ...state,
         ingredients: updatedIngredients,
-        editedIngredientIndex: null,
-        editedIngredient: -1
+        // editedIngredientIndex: null,
+        // editedIngredient: -1
       };
 
     case ShoppingListActions.DELETE_INGREDIENT:
@@ -59,8 +59,8 @@ export function shoppingListReducer(
         ingredients: state.ingredients.filter((ing, i) => {
           return i !== state.editedIngredientIndex;
         }),
-        editedIngredientIndex: null,
-        editedIngredient: -1
+        // editedIngredientIndex: null,
+        // editedIngredient: -1
       };
 
     case ShoppingListActions.START_EDIT:

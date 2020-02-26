@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Ingredient } from '../../../models/ingredient.model';
-import { ShoppingListService } from '../../../services/shopping-list.service';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RecipeService } from 'src/app/services/recipe.service';
@@ -20,8 +19,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editedItem: Ingredient;
   ingredientMasurements: {}[];
 
-  constructor(private slService: ShoppingListService,
-              private recipeService: RecipeService,
+  constructor(private recipeService: RecipeService,
               private store: Store<fromShoppingList.AppState>) { }
 
   ngOnInit() {
@@ -39,19 +37,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       }
     });
 
-    // this.subscription = this.slService.isEdited.subscribe(
-    //   (index: number) => {
-    //     // this.editMode = true;
-    //     this.editedItemIndex = index;
-    //     this.editedItem = this.slService.getIngredient(index);
-    //     this.slForm.setValue({
-    //       name: this.editedItem.name,
-    //       amount: this.editedItem.amount,
-    //       measurement: this.editedItem.measurement
-    //     });
-    //   });
-
-      this.ingredientMasurements = this.recipeService.getMeasurements();
+    this.ingredientMasurements = this.recipeService.getMeasurements();
   }
 
   ngOnDestroy() {

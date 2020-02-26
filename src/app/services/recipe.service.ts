@@ -70,9 +70,9 @@ export class RecipeService {
     return this.measurements.slice();
   }
 
-  addIngredientsToList(ingredients: Ingredient[]) {
-    this.slService.addIngredients(ingredients);
-  }
+  // addIngredientsToList(ingredients: Ingredient[]) {
+  //   this.slService.addIngredients(ingredients);
+  // }
 
   addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);

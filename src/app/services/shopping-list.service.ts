@@ -23,27 +23,27 @@ export class ShoppingListService {
     return this.ingredients[index];
   }
 
-  addIngredient(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
-    // this.ingredientSelected.emit(this.ingredients.slice());
-    this.ingredientSelected.next(this.ingredients.slice());
-  }
+  // addIngredient(ingredient: Ingredient) {
+  //   this.ingredients.push(ingredient);
+  //   // this.ingredientSelected.emit(this.ingredients.slice());
+  //   this.ingredientSelected.next(this.ingredients.slice());
+  // }
 
-  updateIngredient(index: number, newIngredient: Ingredient) {
-    this.ingredients[index] = newIngredient;
-    this.ingredientSelected.next(this.ingredients.slice());
-  }
+  // updateIngredient(index: number, newIngredient: Ingredient) {
+  //   this.ingredients[index] = newIngredient;
+  //   this.ingredientSelected.next(this.ingredients.slice());
+  // }
 
-  addIngredients(ingredients: Ingredient[]) {
-    // this.ingredients.push(...ingredients);
-    // this.ingredientSelected.emit(this.ingredients.slice());
-    for(let i of ingredients) {
-      this.addIngredient(i);
-    }
-  }
+  // addIngredients(ingredients: Ingredient[]) {
+  //   // this.ingredients.push(...ingredients);
+  //   // this.ingredientSelected.emit(this.ingredients.slice());
+  //   for(let i of ingredients) {
+  //     this.addIngredient(i);
+  //   }
+  // }
 
-  deleteIngredient(index: number) {
-    this.ingredients.splice(index, 1);
-    this.ingredientSelected.next(this.ingredients.slice());
-  }
+  // deleteIngredient(index: number) {
+  //   this.ingredients.splice(index, 1);
+  //   this.ingredientSelected.next(this.ingredients.slice());
+  // }
 }

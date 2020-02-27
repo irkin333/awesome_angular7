@@ -12,8 +12,7 @@ export class Login implements Action {
       userId: string;
       token: string;
       expirationDate: Date;
-    }
-  ) {}
+    }) {}
 }
 
 export class Logout implements Action {

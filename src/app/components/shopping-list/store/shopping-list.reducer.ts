@@ -1,16 +1,11 @@
 import { Ingredient } from 'src/app/models/ingredient.model';
 import * as ShoppingListActions from './shopping-list.actions';
-import { store } from '@angular/core/src/render3';
 
 
 export interface State {
   ingredients: Ingredient[];
   editedIngredient: Ingredient;
   editedIngredientIndex: number;
-}
-
-export interface AppState {
-  shoppingList: State;
 }
 
 const initialState : State = {

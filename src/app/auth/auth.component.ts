@@ -4,6 +4,9 @@ import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { AlertComponent } from '../shared/alert/alert.component';
 import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
+import { Store } from '@ngrx/store';
+import * as fromApp from '../store/app.reducers';
+import * as AuthActions from './store/auth.actions';
 
 @Component({
   selector: 'app-auth',
@@ -20,7 +23,8 @@ export class AuthComponent implements OnInit, OnDestroy {
     constructor(
         private authService: AuthService,
         private router: Router,
-        private componentFactoryResolver: ComponentFactoryResolver
+        private componentFactoryResolver: ComponentFactoryResolver,
+        private store: Store<fromApp.AppState>
         ) { }
 
     onSwithLoginSignUpMode () {
@@ -39,6 +43,9 @@ export class AuthComponent implements OnInit, OnDestroy {
         this.loading = true;
         if(this.isLoggedIn) {
             authObs = this.authService.login(email, password);
+            // this.store.dispatch(new AuthActions.LoginStart({
+            //     email, password
+            // }));
         } else {
             authObs = this.authService.signup(email, password);
         }

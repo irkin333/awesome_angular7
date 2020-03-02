@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { PracticeDeclarations } from './module-imports/practice-declarations';
@@ -16,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import * as fromApp from './store/app.reducers';
+import { AuthEffects } from './auth/store/auth.efects';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import * as fromApp from './store/app.reducers';
     SharedModule,
     ProvidersModule,
     HttpClientModule,
-    StoreModule.forRoot(fromApp.appReducer)
+    StoreModule.forRoot(fromApp.appReducer),
+    // EffectsModule.forRoot([AuthEffects])
   ],
   bootstrap: [AppComponent]
 })

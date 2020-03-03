@@ -3,7 +3,6 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
-import { PracticeDeclarations } from './module-imports/practice-declarations';
 import { ProvidersModule } from './module-imports/providers';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,9 +25,7 @@ import { AuthEffects } from './auth/store/auth.efects';
     HomeComponent,
     HeaderComponent,
     ErrorPageComponent,
-    AuthComponent,
-
-    ...PracticeDeclarations,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

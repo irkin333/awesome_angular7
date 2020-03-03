@@ -21,15 +21,7 @@ const AppRoutes: Routes = [
   }, {
     path: 'shopping-list', loadChildren: () => import('../components/shopping-list/shopping-list.module').then(m => m.ShoppingListModule)
   }, {
-    path: 'awesome-practice', component: AwesomePracticeComponent,
-    children: [
-      { path: 'directives', component: AwesomeDirectiveComponent },
-      { path: 'services', component: AwesomeServicesComponent },
-      { path: 'template-driven-forms', component: AwesomeTDFormsComponent },
-      { path: 'reactive-forms', component: AwesomeReactiveFormsComponent },
-      { path: 'pipes', component: AwesomePipesComponent },
-      { path: 'http-example', component: AwesomeHttpsComponent },
-    ]
+    path: 'awesome-practice', loadChildren: () => import('../assignments/awesome-practice.module').then(m => m.AwesomePracticeModule)
   }, {
     path: 'auth', component: AuthComponent
   }, {
@@ -43,7 +35,7 @@ const AppRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(AppRoutes, {
-    /** we will use lazy loading t osplit code into bundles, but they will be preloaded */
+    /** we will use lazy loading to split code into bundles, but they will be preloaded */
     preloadingStrategy: PreloadAllModules
   })],
   exports: [RouterModule]

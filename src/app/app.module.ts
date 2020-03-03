@@ -5,7 +5,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from './app.component';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './routing/app-routes.module';
+import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AuthComponent } from './auth/auth.component';

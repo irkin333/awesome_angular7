@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DataStorageService } from '../shared/data-storage.service';
-import { RecipeService } from '../services/recipe.service';
-import { AuthService } from '../auth/auth.service';
+import { DataStorageService } from '../../shared/data-storage.service';
+import { RecipeService } from '../../services/recipe.service';
+import { AuthService } from '../../auth/auth.service';
 import { Subscription } from 'rxjs';
-import { AppState } from '../store/app.reducers';
+import { AppState } from '../../store/app.reducers';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
 

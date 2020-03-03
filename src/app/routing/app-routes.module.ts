@@ -2,15 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { ErrorPageComponent } from '../components/error-page/error-page.component';
-
-import { AwesomePracticeComponent } from '../assignments/awesome-practice.component';
-import { AwesomeDirectiveComponent } from '../assignments/awesome-directive/awesome-directive.component';
-import { AwesomeServicesComponent } from '../assignments/awesome-services/awesome-services.component';
-import { AwesomeTDFormsComponent } from '../assignments/awesome-td-forms/awesome-td-forms.component';
-import { AwesomeReactiveFormsComponent } from '../assignments/awesome-reactive-forms/awesome-reactive-forms.component';
-import { AwesomePipesComponent } from '../assignments/awesome-pipes/awesome-pipes.component';
-import { AwesomeHttpsComponent } from '../assignments/awesome-https/awesome-https.component';
-
 import { AuthComponent } from '../auth/auth.component';
 
 const AppRoutes: Routes = [

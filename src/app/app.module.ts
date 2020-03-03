@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { AuthComponent } from './auth/auth.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 

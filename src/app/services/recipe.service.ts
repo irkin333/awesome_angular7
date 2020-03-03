@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 import * as fromApp from '../store/app.reducers';
 import { Store } from '@ngrx/store';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class RecipeService {
   recipesList = new Subject<Recipe[]>();
 

@@ -17,6 +17,9 @@ import { ShortenPipe } from './awesome-pipes/shorten.pipe';
 import { FilterPipe } from './awesome-pipes/filter.pipe';
 import { AwesomeHttpsComponent } from './awesome-https/awesome-https.component';
 import { AwesomeRoutingModule } from './awesome-practice.routing.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthHTTPInterceptorService } from './awesome-https/auth-http-interceptor.service';
+import { LogInterceptorService } from './awesome-https/log-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,18 @@ import { AwesomeRoutingModule } from './awesome-practice.routing.module';
   imports: [
 		SharedModule,
 		AwesomeRoutingModule
+  ],
+  providers: [
+    { 
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthHTTPInterceptorService,
+        multi: true
+    },
+    { 
+        provide: HTTP_INTERCEPTORS,
+        useClass: LogInterceptorService,
+        multi: true
+    },
   ]
 })
 export class AwesomePracticeModule {}

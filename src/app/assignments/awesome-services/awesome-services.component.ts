@@ -14,4 +14,8 @@ export class AwesomeServicesComponent implements OnInit {
   ngOnInit() {
     this.accounts = this.accountsService.accounts;
   }
+
+  onAccountAdded($event) {
+    console.log($event);
+  }
 }

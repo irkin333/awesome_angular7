@@ -12,6 +12,8 @@ export class LectureFormsComponent implements OnInit {
 
   constructor() { }
 
+  get hobbies() { return <FormArray>this.signUpForm.get('hobbies'); }
+
   ngOnInit() {
     this.signUpForm = new FormGroup({
       'userData': new FormGroup({

@@ -1,6 +1,8 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEventType } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class LogInterceptorService implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler) {
         console.log('Outgoing request: ');

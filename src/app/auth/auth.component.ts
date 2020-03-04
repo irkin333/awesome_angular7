@@ -14,7 +14,7 @@ import * as AuthActions from './store/auth.actions';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit, OnDestroy {
-    @ViewChild(PlaceholderDirective) alertHost: PlaceholderDirective;
+    @ViewChild(PlaceholderDirective, { static: true }) alertHost: PlaceholderDirective;
     isLoggedIn = true;
     loading = false;
 

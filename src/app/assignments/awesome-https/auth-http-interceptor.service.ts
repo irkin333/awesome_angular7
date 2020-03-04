@@ -1,5 +1,7 @@
 import { HttpInterceptor, HttpRequest, HttpHandler } from '@angular/common/http';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class AuthHTTPInterceptorService implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler) {
         //it is possible to make modifications of request here

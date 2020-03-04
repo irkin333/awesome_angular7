@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  appTitle = 'You are entered recipes application, built with Awesome Angular!';
+  appTitle = 'Welcome to the recipes application, built with Awesome Angular!';
 
   constructor() { }
 

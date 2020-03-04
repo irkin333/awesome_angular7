@@ -1,0 +1,11 @@
+.nav-pills {
+	.nav-item {
+		a {
+			color: white;
+
+			&.active {
+				background-color: #6c757d;
+			}
+		}
+	}
+}

@@ -1,7 +1,21 @@
 .recipe {
-    display: flex;
     cursor: pointer;
     margin: 5px 0;
+    color: #6c757d;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.active {
+        background-color: #343a40;
+        border-color: #343a40;
+        color: white;
+    }
+
+    .wrapper {
+        display: flex;
+    }
 
     .pull-left {
         flex-grow: 1;
@@ -9,5 +23,11 @@
 
     .pull-right {
         flex-grow: 0;
+    }
+
+    .img-responsive {
+        width: 100px;
+        height: 100px;
+        margin: 0 0 0 5px;
     }
 }

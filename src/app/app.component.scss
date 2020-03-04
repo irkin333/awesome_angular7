@@ -1,3 +1,11 @@
 .app-content {
 	padding: 15px 0 0 0;
 }
+
+::ng-deep .dropdown, .bn-group {
+	&.open {
+		.dropdown-menu {
+			display: block;
+		}
+	}
+}

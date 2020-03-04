@@ -44,12 +44,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onFetchRecipes() {
-    const recipes = this.recipesService.getRecipes();
-    if(recipes.length === 0) {
-      this.dataStorageService.fetchRecipes().subscribe();
-    } else {
-      return recipes;
-    }
+    // const recipes = this.recipesService.getRecipes();
+    // if(recipes.length === 0) {
+    //   this.dataStorageService.fetchRecipes().subscribe();
+    // } else {
+    //   return recipes;
+    // }
   }
   
   onLogout() {

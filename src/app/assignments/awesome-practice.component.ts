@@ -5,5 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './awesome-practice.component.html'
 })
 export class AwesomePracticeComponent {
-  title = 'Awesome Practice section';
+  title = 'Awesome Practice Section';
 }

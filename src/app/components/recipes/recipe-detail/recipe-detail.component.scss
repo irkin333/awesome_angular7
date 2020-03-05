@@ -1,0 +1,18 @@
+.recipe-detail {
+	img {
+		max-width: 200px;
+		margin: 0 auto;
+	}
+
+	.btn-group {
+		&.open {
+			.dropdown-menu {
+				display: block;
+			}
+
+			.dropdown-item {
+				cursor: pointer;
+			}
+		}
+	}
+}

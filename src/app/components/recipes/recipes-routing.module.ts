@@ -11,11 +11,12 @@ import { AuthGuard } from '../../auth/auth-guards';
 const RecipesRoutes: Routes = [
   {
     path: '', component: RecipesComponent, canActivate: [AuthGuard],
+    resolve: [RecipesResolverService],
     children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent },
-      { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService] },
-      { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService] }
+      { path: ':id', component: RecipeDetailComponent },
+    { path: ':id/edit', component: RecipeEditComponent }
     ]
   }
 ];

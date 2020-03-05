@@ -22,7 +22,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
     this.subscription = this.recipesService.recipesList.subscribe((recipesList) => {
       this.recipes = recipesList;
     });
-
+    
     this.fetchRecipes();
   }
 
@@ -35,7 +35,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
     if(recipes.length === 0) {
       this.dataStorageService.fetchRecipes().subscribe();
     } else {
-      return recipes;
+      this.recipes = recipes;
     }
   }
 }

@@ -2,12 +2,40 @@ button {
     margin-right: 10px;
 }
 
-.recipe-ngredient {
-    margin-bottom: 10px;
+.recipe-ingredient {
+    margin-bottom: 10px!important;
+    display: flex;
+    justify-content: space-between;
+
+    & > div {
+        padding: 0 5px;
+    }
+
+    & > div:first-child {
+        padding: 0 5px 0 0;
+    }
+
+    .btn {
+        margin: 0;
+    }
 }
 
 input, select, textarea {
     &.ng-invalid {
-        border: 1px solid red;
+        border: 1px solid #dc3545;
+    }
+}
+
+form {
+    display: block;
+    width: 100%;
+
+    .row {
+        margin: 0;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-bottom: .5rem;
     }
 }

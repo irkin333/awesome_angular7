@@ -8,6 +8,7 @@ export class RecipesResolverService implements Resolve<Recipe[]> {
     constructor(private dataStorage: DataStorageService) {}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+        console.log('hi')
         return this.dataStorage.fetchRecipes();
     }
 }

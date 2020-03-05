@@ -2,7 +2,7 @@
 	padding: 15px 0 0 0;
 }
 
-::ng-deep .dropdown, .bn-group {
+::ng-deep .dropdown {
 	&.open {
 		.dropdown-menu {
 			display: block;

@@ -17,8 +17,17 @@
             <div class="actions">
                 <button class="btn btn-primary"
                         [disabled]="!authForm.valid">{{ isLoggedIn ? 'Login' : 'Sign Up'}}</button>   
-                <button type="button" class="btn btn-primary" (click)="onSwithLoginSignUpMode()">
-                    Switch to {{ isLoggedIn ? 'Sign Up' : 'Login' }}
+                <button type="button"
+                        class="btn btn-outline-dark"
+                        (click)="onSwithLoginSignUpMode()">
+                    <span *ngIf="isLoggedIn">
+                        Switch to Sign Up
+                        <i class="fa fa-arrow-right"></i>
+                    </span>
+                    <span *ngIf="!isLoggedIn">
+                        <i class="fa fa-arrow-left"></i>
+                        Switch to Login
+                    </span>
                 </button>
             </div>
         </form>

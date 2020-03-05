@@ -1,14 +1,21 @@
-# AwesomeApp
+# Awesome Angular Recipes App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) current @angular/cli version is 9.0.4; current @angular/core version is 9.0.4.
+The project was build following Maximilian Schwarzmüller video course on udemy. Project contains Recipes application with authorization and practice exercises.
+Project is created and maintained just to develop skill in Angular. Details about Recipes part of the project can be found on the home page of the project.
+
+## Start working
+
+Requirements: node.js (latest stable version is recommended).
+`git clone https://github.com/irkin333/awesome_angular.git`
+`cd awesome_angular`
+`npm install`
+`ng serve`
+Open http://localhost:4200 in your browser and have fun!
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 

@@ -8,10 +8,10 @@ Project is created and maintained just to develop skill in Angular. Details abou
 
 Requirements: node.js (latest stable version is recommended).
 ```
-`git clone https://github.com/irkin333/awesome_angular.git`
-`cd awesome_angular`
-`npm install`
-`ng serve`
+git clone https://github.com/irkin333/awesome_angular.git
+cd awesome_angular
+npm install
+ng serve
 ```
 Open http://localhost:4200 in your browser and have fun!
 

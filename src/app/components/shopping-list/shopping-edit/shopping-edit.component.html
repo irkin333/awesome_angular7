@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-sm-12">
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group">
@@ -33,7 +33,7 @@
           </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 shopping-edit-btns">
+        <div class="col-sm-12 shopping-edit-btns">
           <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{ editMode ? 'UPDATE' : 'ADD' }}</button>
           <button class="btn btn-danger" type="button" (click)="onDelete()" *ngIf="editMode">DELETE</button>
           <button class="btn btn-primary" type="button" (click)="onClear()">CLEAR</button>

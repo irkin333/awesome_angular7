@@ -22,20 +22,8 @@
     </li>
   </ul>
 
-  <div class="dropdown pull-right"
-        style="margin-left: auto;" appDropdown>
-    <button class="btn btn-info dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            *ngIf="isAuthenticated">
-      Manage recipes
-    </button>
-    <div appDropdown class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="isAuthenticated">
-      <!-- <a class="dropdown-item" (click)="onFetchRecipes()">Fetch recipes</a> -->
-      <a class="dropdown-item" (click)="onSaveRecipes()">Store recipes</a>
-    </div>
-    <button style="margin-left: 10px;"
-            class="btn btn-danger"
+  <div class="dropdown pull-right">
+    <button class="btn btn-danger"
             *ngIf="isAuthenticated"
             (click)="onLogout()">Logout</button>
   </div>

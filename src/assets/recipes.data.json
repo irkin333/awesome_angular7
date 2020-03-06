@@ -1,0 +1,31 @@
+[{
+	"name": "NY pizza",
+	"description": "NY pizza is a real american pizza! You should try it at least once in your life!',",
+	"imagePath": "../../assets/images/pizza.png",
+	"ingredients": [
+		{"name": "Dough", "amount": 1000, "measurement": "gr" },
+		{"name": "Salami", "amount": 200, "measurement": "gr" },
+		{"name": "Cheese", "amount": 250, "measurement": "gr" },
+		{"name": "Tomato sauce", "amount": 100, "measurement": "gr" }
+	]
+}, {
+	"name": "Hot Dog",
+	"description": "Traditional delicious hot dog!",
+	"imagePath": "../../assets/images/hot-dog.png",
+	"ingredients": [
+		{"name": "Buns", "amount": 1, "measurement": "piece" },
+		{"name": "Sausage", "amount": 1, "measurement": "piece" },
+		{"name": "Mustard", "amount": 100, "measurement": "gr" },
+		{"name": "Ketchup", "amount": 100, "measurement": "gr" },
+		{"name": "Mayonnaise", "amount": 100, "measurement": "gr" }
+	]
+}, {
+	"name": "French Fries",
+	"description": "The best taste of potato you can ever experience!",
+	"imagePath": "../../assets/images/french-fries.png",
+	"ingredients": [
+		{"name": "Potato", "amount": 500, "measurement": "gr" },
+		{"name": "Oil", "amount": 1000, "measurement": "ml" },
+		{"name": "Salt", "amount": 10, "measurement": "gr" }
+	]
+}]

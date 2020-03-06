@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Ingredient } from '../../../models/ingredient.model';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { RecipeService } from 'src/app/services/recipe.service';
+import { RecipesService } from 'src/app/services/recipe.service';
 import { Store } from '@ngrx/store';
 import * as ShoppingListActions from '../store/shopping-list.actions';
 import * as fromApp from '../../../store/app.reducers'
@@ -19,7 +19,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editedItem: Ingredient;
   ingredientMasurements: {}[];
 
-  constructor(private recipeService: RecipeService,
+  constructor(private recipesService: RecipesService,
               private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.ingredientMasurements = this.recipeService.getMeasurements();
+    this.ingredientMasurements = this.recipesService.getMeasurements();
   }
 
   ngOnDestroy() {

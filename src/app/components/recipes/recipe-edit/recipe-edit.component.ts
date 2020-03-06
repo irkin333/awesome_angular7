@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
-import { RecipeService } from 'src/app/services/recipe.service';
+import { RecipesService } from 'src/app/services/recipe.service';
 import { Recipe } from 'src/app/models/recipe.model';
 
 @Component({
@@ -18,7 +18,7 @@ export class RecipeEditComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private recipeService: RecipeService) { }
+              private recipesService: RecipesService) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -27,14 +27,14 @@ export class RecipeEditComponent implements OnInit {
       this.initForm();
     });
 
-    this.ingredientMasurements = this.recipeService.getMeasurements();
+    this.ingredientMasurements = this.recipesService.getMeasurements();
   }
 
   onSubmit() {
     if(!!this.editMode) {
-      this.recipeService.updateRecipe(this.recipeForm.value, this.id)
+      this.recipesService.updateRecipe(this.recipeForm.value, this.id)
     } else {
-      this.recipeService.addRecipe(this.recipeForm.value);
+      this.recipesService.addRecipe(this.recipeForm.value);
     }
 
     this.onCancel();
@@ -42,7 +42,7 @@ export class RecipeEditComponent implements OnInit {
 
   onCancel() {
     if(!this.editMode && !this.id) {
-      this.id = this.recipeService.getLastRecipeInList();
+      this.id = this.recipesService.getLastRecipeInList();
     }
     this.router.navigate([`/recipes/${this.id}`]);
   }
@@ -65,7 +65,7 @@ export class RecipeEditComponent implements OnInit {
 
   private initForm() {
     this.recipe = !!this.editMode
-                      ? this.recipeService.getRecipe(this.id) 
+                      ? this.recipesService.getRecipe(this.id) 
                       : new Recipe('', '', '', []);
 
     let ingredients = this.recipe.ingredients.map((ingredient) => {

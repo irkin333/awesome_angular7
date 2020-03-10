@@ -5,7 +5,7 @@ import { RecipeStartComponent } from './recipe-start/recipe-start.component';
 
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
-import { RecipesResolverService } from '../../services/recipes-resolver.service';
+import { RecipesResolverService } from './services/recipes-resolver.service';
 import { AuthGuard } from '../../auth/auth-guards';
 
 const RecipesRoutes: Routes = [

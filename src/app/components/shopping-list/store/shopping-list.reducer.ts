@@ -1,6 +1,13 @@
 import { Ingredient } from 'src/app/models/ingredient.model';
-import * as ShoppingListActions from './shopping-list.actions';
-
+import {
+  ShoppingListActions,
+  ADD_INGREDIENT,
+  ADD_INGREDIENTS,
+  UPDATE_INGREDIENT,
+  DELETE_INGREDIENT,
+  START_EDIT,
+  STOP_EDIT
+} from './shopping-list.actions';
 
 export interface State {
   ingredients: Ingredient[];
@@ -8,7 +15,7 @@ export interface State {
   editedIngredientIndex: number;
 }
 
-const initialState : State = {
+const initialState: State = {
   ingredients: [
     new Ingredient('Sausage', 5, 'piece'),
     new Ingredient('Cheese', 500, 'gr'),
@@ -20,20 +27,20 @@ const initialState : State = {
 
 export function shoppingListReducer(
   state: State = initialState,
-  action: ShoppingListActions.ShoppingListActions
+  action: ShoppingListActions
 ) {
   switch (action.type) {
-    case ShoppingListActions.ADD_INGREDIENT:
+    case ADD_INGREDIENT:
       return {
         ...state,
         ingredients: [ ...state.ingredients, action.payload ]
       };
-    case ShoppingListActions.ADD_INGREDIENTS:
+    case ADD_INGREDIENTS:
       return {
         ...state,
         ingredients: [ ...state.ingredients, ...action.payload ]
       };
-    case ShoppingListActions.UPDATE_INGREDIENT:
+    case UPDATE_INGREDIENT:
       const ingredient = state.ingredients[state.editedIngredientIndex];
       const updatedIngredient = {
         ...ingredient,
@@ -48,7 +55,7 @@ export function shoppingListReducer(
         editedIngredient: null
       };
 
-    case ShoppingListActions.DELETE_INGREDIENT:
+    case DELETE_INGREDIENT:
       return {
         ...state,
         ingredients: state.ingredients.filter((ing, i) => {
@@ -58,14 +65,14 @@ export function shoppingListReducer(
         editedIngredient: null
       };
 
-    case ShoppingListActions.START_EDIT:
+    case START_EDIT:
       return {
         ...state,
         editedIngredientIndex: action.payload,
         editedIngredient: { ...state.ingredients[action.payload] }
       };
 
-    case ShoppingListActions.STOP_EDIT:
+    case STOP_EDIT:
       return {
         ...state,
         editedIngredientIndex: -1,

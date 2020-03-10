@@ -1,7 +1,7 @@
 import { 
   AuthActions,
-  LOGIN, LOGOUT,
-  Login, Logout
+  LOGIN,
+  LOGOUT
 } from './auth.actions';
 import { User } from '../user.model';
 

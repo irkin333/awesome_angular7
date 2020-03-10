@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Recipe } from '../models/recipe.model';
+import { Recipe } from '../../../models/recipe.model';
 import { RecipesService } from './recipe.service';
 
 @Injectable({ providedIn: 'root' })

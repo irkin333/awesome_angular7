@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
-import { throwError, BehaviorSubject, fromEventPattern } from 'rxjs';
+import { throwError } from 'rxjs';
 import { User } from './user.model';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -22,7 +22,6 @@ export interface AuthResponseData {
     providedIn: 'root'
 })
 export class AuthService {
-    // user = new BehaviorSubject<User>(null);
     private tokenExpTimer: any;
 
     constructor(
@@ -72,7 +71,6 @@ export class AuthService {
         const loadedUser = new User(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
 
         if(loadedUser.token) {
-            // this.user.next(loadedUser);
             this.store.dispatch(new AuthActions.Login({
                 email: loadedUser.email,
                 userId: loadedUser.id,
@@ -85,7 +83,6 @@ export class AuthService {
     }
 
     logout() {
-        // this.user.next(null);
         this.store.dispatch(new AuthActions.Logout());
         this.router.navigate(['/auth']);
         localStorage.removeItem('userData');
@@ -104,7 +101,6 @@ export class AuthService {
     private handleAuth(responseData: AuthResponseData) {
         const ExpirationDate = new Date(new Date().getTime() + +responseData.expiresIn * 1000);
         const user = new User(responseData.email, responseData.localId, responseData.idToken, ExpirationDate);
-        // this.user.next(user);
         this.store.dispatch(new AuthActions.Login({
             email: user.email,
             userId: user.id,

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
-import { RecipesService } from 'src/app/services/recipe.service';
+import { RecipesService } from '../services/recipe.service';
 import { Recipe } from 'src/app/models/recipe.model';
+import { MeasuresService } from 'src/app/services/measurements.service';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -18,7 +19,8 @@ export class RecipeEditComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private recipesService: RecipesService) { }
+              private recipesService: RecipesService,
+              private measuresService: MeasuresService) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -27,7 +29,7 @@ export class RecipeEditComponent implements OnInit {
       this.initForm();
     });
 
-    this.ingredientMasurements = this.recipesService.getMeasurements();
+    this.ingredientMasurements = this.measuresService.getMeasurements();
   }
 
   onSubmit() {

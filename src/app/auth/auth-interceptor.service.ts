@@ -8,22 +8,9 @@ import { AppState } from '../store/app.reducers';
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
   constructor(
-    private authService: AuthService,
     private store: Store<AppState>) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
-    // return this.authService.user.pipe(
-    //   take(1),
-    //   exhaustMap(user => {
-    //     if(!user) {
-    //       return next.handle(request);
-    //     }
-    //     const modifiedReq = request.clone({
-    //       params: new HttpParams().set('auth', user.token)
-    //     })
-    //     return next.handle(modifiedReq);
-    //   }),
-    // )
     return this.store.select('auth').pipe(
       take(1),
       map(authState => {

@@ -33,7 +33,7 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     SharedModule,
     HttpClientModule,
     StoreModule.forRoot(fromApp.appReducer),
-    // EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([AuthEffects])
   ],
   providers: [{ 
     provide: HTTP_INTERCEPTORS,

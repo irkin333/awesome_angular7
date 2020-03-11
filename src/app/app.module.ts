@@ -15,7 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import * as fromApp from './store/app.reducers';
-import { AuthEffects } from './auth/store/auth.efects';
+import { AuthEffects } from './auth/store/auth.effects';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({

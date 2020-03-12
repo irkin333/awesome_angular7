@@ -30,7 +30,17 @@ export class AuthEffects {
           password: authData.payload.password,
           returnSecureToken: true
         }
-      ).pipe(catchError(errorResponse => {
+      ).pipe(map((responseData: any) => {
+          const ExpirationDate = new Date(new Date().getTime() + +responseData.expiresIn * 1000);
+          const user = new User(responseData.email, responseData.localId, responseData.idToken, ExpirationDate);
+          return new AuthActions.Login({
+            email: user.email,
+            userId: user.id,
+            token: user.token,
+            expirationDate: ExpirationDate
+          });
+        }),
+        catchError(errorResponse => {
         let errorMessage = 'An unknown error occured!';
         if(!errorResponse.error || !errorResponse.error.error) {
             return of(new AuthActions.LoginFail(errorMessage));
@@ -47,15 +57,6 @@ export class AuthEffects {
                 break;
         }
         return of(new AuthActions.LoginFail(errorMessage));
-      }), map((responseData: any) => {
-        const ExpirationDate = new Date(new Date().getTime() + +responseData.expiresIn * 1000);
-        const user = new User(responseData.email, responseData.localId, responseData.idToken, ExpirationDate);
-        return new AuthActions.Login({
-          email: user.email,
-          userId: user.id,
-          token: user.token,
-          expirationDate: ExpirationDate
-        });
       }));
     })
   );

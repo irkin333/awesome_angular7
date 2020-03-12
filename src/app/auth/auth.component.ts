@@ -19,10 +19,9 @@ export class AuthComponent implements OnInit, OnDestroy {
     loading = false;
 
     private alertSubscription: Subscription;
+    private storeSubscription: Subscription;
 
     constructor(
-        private authService: AuthService,
-        private router: Router,
         private componentFactoryResolver: ComponentFactoryResolver,
         private store: Store<fromApp.AppState>
         ) { }
@@ -37,31 +36,21 @@ export class AuthComponent implements OnInit, OnDestroy {
         }
         const email = authForm.value.email;
         const password = authForm.value.password;
-        let authObs: Observable<AuthResponseData>;
 
         this.loading = true;
         if(this.isLoggedIn) {
-            // authObs = this.authService.login(email, password);
             this.store.dispatch(new AuthActions.LoginStart({
                 email, password
             }));
         } else {
-            // authObs = this.authService.signup(email, password);
+            this.store.dispatch(new AuthActions.SignupStart({
+                email, password
+            }));
         }
-
-        // authObs.subscribe(
-        //     (response) => {
-        //         this.loading = false;
-        //         authForm.reset();
-        //         this.router.navigate(['/recipes'])
-        //     }, (errorMessage) => {
-        //         this.showErrorAlert(errorMessage);
-        //         this.loading = false;
-        //     });
     }
   
     ngOnInit() {
-        this.store.select('auth').subscribe(authState => {
+        this.storeSubscription = this.store.select('auth').subscribe(authState => {
             this.loading = authState.loading;
 
             if(!!authState.authError) {
@@ -74,8 +63,13 @@ export class AuthComponent implements OnInit, OnDestroy {
         if(this.alertSubscription) {
             this.alertSubscription.unsubscribe();
         }
+
+        if(this.storeSubscription) {
+            this.storeSubscription.unsubscribe();
+        }
     }
 
+    /* Dynamic component */
     private showErrorAlert(message: string) {
         const alertComponentFactory = this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
         const hostViewContainer = this.alertHost.viewContainerRef;

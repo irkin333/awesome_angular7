@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 
@@ -17,6 +18,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import * as fromApp from './store/app.reducers';
 import { AuthEffects } from './auth/store/auth.effects';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     SharedModule,
     HttpClientModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([AuthEffects]),
+    StoreDevtoolsModule.instrument({logOnly: environment.production})
   ],
   providers: [{ 
     provide: HTTP_INTERCEPTORS,

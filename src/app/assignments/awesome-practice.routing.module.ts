@@ -7,6 +7,7 @@ import { AwesomeTDFormsComponent } from './awesome-td-forms/awesome-td-forms.com
 import { AwesomeServicesComponent } from './awesome-services/awesome-services.component';
 import { AwesomeDirectiveComponent } from './awesome-directive/awesome-directive.component';
 import { AwesomePracticeComponent } from './awesome-practice.component';
+import { AwesomeAnimationsComponent } from './awesome-animations/awesome-animations.component';
 
 
 const AwesomeRoutes: Routes = [
@@ -18,7 +19,8 @@ const AwesomeRoutes: Routes = [
 			{ path: 'template-driven-forms', component: AwesomeTDFormsComponent },
 			{ path: 'reactive-forms', component: AwesomeReactiveFormsComponent },
 			{ path: 'pipes', component: AwesomePipesComponent },
-			{ path: 'http-example', component: AwesomeHttpsComponent }
+			{ path: 'http-example', component: AwesomeHttpsComponent },
+			{ path: 'animations', component: AwesomeAnimationsComponent }
     ]
   }
 ];

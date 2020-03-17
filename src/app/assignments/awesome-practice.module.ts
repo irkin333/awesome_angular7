@@ -20,6 +20,7 @@ import { AwesomeRoutingModule } from './awesome-practice.routing.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHTTPInterceptorService } from './awesome-https/auth-http-interceptor.service';
 import { LogInterceptorService } from './awesome-https/log-interceptor.service';
+import { AwesomeAnimationsComponent } from './awesome-animations/awesome-animations.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LogInterceptorService } from './awesome-https/log-interceptor.service';
     AwesomePipesComponent,
     ShortenPipe,
     FilterPipe,
-		AwesomeHttpsComponent
+    AwesomeHttpsComponent,
+    AwesomeAnimationsComponent
   ],
   imports: [
 		SharedModule,
